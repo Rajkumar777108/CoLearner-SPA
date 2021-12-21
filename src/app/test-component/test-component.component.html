@@ -1,0 +1,23 @@
+<p class="centre">test-component works!</p>
+<div class="btn btn-outline-danger">Click Me</div>
+<div class="row">
+    <div class="col-md-3">
+        <table class="table table-bordered ">
+            <thead>
+                <td>Seq No</td>
+                <td>Menu Id</td>
+                <td>Menu Name</td>
+                <td>Status</td>
+            </thead>
+            <tbody>
+                <tr *ngFor="let m of menus">
+                    <td>{{m.seqNbr}}</td>
+                    <td>{{m.menuId}}</td>
+                    <td>{{m.menuDesc}}</td>
+                    <td>{{m.currStatus}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

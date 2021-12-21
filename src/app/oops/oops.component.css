@@ -1,0 +1,33 @@
+.code-block {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+.kwd{
+    color: blue;
+}
+.typ
+{
+    color:lightseagreen;
+}
+.funName{
+    font-weight: 600;
+}
+.console{
+    color: lightblue;
+}
+.preblock{
+    background-color:#f9f6f6;
+    border: black 1px;
+}
+.colon{
+    color:black;
+}
+.comment{
+    color: green;
+}
+/* .legend {
+    background-color: #000;
+    color: #fff;
+    padding: 3px 6px;
+} */

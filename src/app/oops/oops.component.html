@@ -1,0 +1,118 @@
+<div class="container" style="margin-top: 14px;">
+    <p style="font-style: italic; color: lightblue;">What is Abstract Class/ All about abstract class?</p>
+    <p style="font-style: normal;">
+        An abstract class is a special kind of class that has no implementation. It cannot be instantiated. Its
+        implementation logic is provided by the classes that derive from it. It can have both abstract as well as
+        non-abstract methods.
+        It is not compulsory to have only abstract methods in an abstract class. We can also have an abstract class with
+        only non-abstract methods. <br>
+
+    </p>
+    <ul>
+         <li>
+            <p>An abstract class cannot support multiple inheritances.
+                If we try to inherit more than one abstract class then it will throw compile time error as below.
+            </p>
+        </li>
+    </ul>
+    <!-- <div class=""></div> -->
+    <img class="img-responsive" src="assets/Images/abscl1.png">
+    <p><b>Key Point: -</b></p>
+    <ul>
+        <li>
+            <p>
+                We cannot create an object of Abstract class, but we can create a reference of it. And assign class’s
+                object to this reference and call abstract class’s method like below.
+            </p>
+        </li>
+    </ul>
+    <pre class="preblock">
+        <span class="kwd">public </span><span class="kwd">abstract </span><span class="kwd">class </span><span class="typ">ABS1</span>
+        <span>&#123;</span>
+            <span class="kwd">public </span><span class="kwd">void </span><span class="funName">NonAbstractMedhod</span><span class="funName">(</span><span class="funName">)</span>
+            <span>&#123;</span>
+                <span class="console">Console</span><span>.</span><span>WriteLine</span><span>("Non-Abstract Method");</span>
+            <span>&#125;</span>  
+            <span class="kwd">public </span><span class="kwd">abstract </span><span class="kwd">void </span><span class="funName">ABSMeth1();</span>           
+        <span>&#125;</span>  
+        <span class="kwd">public </span><span class="kwd">class </span><span class="typ">CLS1 </span><span class="colon">: </span><span class="typ">ABS1</span>
+        <span>&#123;</span>
+            <span class="kwd">public </span><span class="kwd">override </span><span class="kwd">void </span><span class="typ">ABSMeth1()</span>
+            <span>&#123;</span>
+                <span class="console">Console</span><span>.</span><span>WriteLine</span><span>("ABSMeth1");</span>
+            <span>&#125;</span>  
+        <span>&#125;</span>
+        <span class="kwd">class </span><span class="typ">Program </span>
+        <span>&#123;</span>
+            <span class="kwd">static </span><span class="kwd">void </span><span>Main</span><span>(</span><span class="kwd">string</span><span>[] </span><span>args)</span>
+            <span>&#123;</span>
+                <span class="typ">CLS1 </span><span>obj = </span><span class="kwd">new </span><span class="typ">CLS1()</span>
+                <span class="typ">ABS1 </span><span>obj1; </span><span class="comment">//Reference created of Abstract class.</span> 
+                <span>obj1 = obj;</span><span class="comment">//Assign class's object to Abstract class reference variable.</span> 
+                <span>obj1.</span><span class="funName">ABSMeth1();</span><span class="comment">//Call abstract method with reference variable.</span>
+                <span>obj1.</span><span class="funName">NoNAbstractMedhod();</span>
+                <span class="console">Console</span><span>.</span><span>ReadLine()</span>
+            <span>&#125;</span>
+    </pre>
+    <br>
+    <ul>
+        <li>
+            <p>
+                An inheritance between abstract to abstract class is possible , we don't need to implement abstract method 
+                of base class into derived class.We can implement it later in concrete class.
+            </p>
+        </li>
+    </ul>
+    <pre class="preblock">
+        <span class="kwd">public </span><span class="kwd">abstract </span><span class="kwd">class </span><span class="typ">ABSCls</span>
+        <span>&#123;</span>
+            <span class="kwd">public abstract void </span><span class="funName">ShowMessage();</span>
+        <span>&#125;</span>
+        <span class="kwd">public </span><span class="kwd">abstract </span><span class="kwd">class </span><span class="typ">ABSCls1</span> <span>: </span><span class="typ">ABSCls</span>
+        <span>&#123;</span>
+            <span class="kwd">public void </span><span class="funName">NonAbsMethod()</span>
+            <span>&#123;</span>
+                <span class="console">Console</span><span>.</span><span>WriteLine</span><span>("NonABS funtion");</span>
+            <span>&#125;</span>
+            <span class="comment">//No need to provide implememtation of base class abstract function, we can implement it in below concrete class directly</span> 
+        <span>&#125;</span>
+        <span class="kwd">public class </span><span class="typ">ConcreteCls </span><span>: </span><span class="typ">ABSCls1</span>
+        <span>&#123;</span>
+            <span class="kwd">public override void </span><span class="funName">ShowMessage()</span>
+            <span>&#123;</span> 
+                 <span class="console">Console</span><span>.</span><span>WriteLine</span><span>("Abstract function implementation");</span>
+            <span>&#125;</span>
+        <span>&#125;</span>
+
+        <span class="kwd">class </span><span class="typ">Program </span>
+        <span>&#123;</span>
+            <span class="kwd">static </span><span class="kwd">void </span><span>Main</span><span>(</span><span class="kwd">string</span><span>[] </span><span>args)</span>
+            <span>&#123;</span>
+                <span class="typ">ConcreteCls </span><span>obj = </span><span class="kwd">new </span><span class="typ">ConcreteCls()</span>  
+                <span>obj.</span><span class="funName">ShowMessage();</span>
+                <span>obj.</span><span class="funName">NonAbsMethod();</span>
+                <span class="console">Console</span><span>.</span><span>ReadLine()</span>
+            <span>&#125;</span>
+        <span>&#125;</span>
+    </pre>
+    <br>
+    <ul>
+        <li>
+            <p>
+                It's mandatory to implement all abstract function of base class into derived class.
+            </p>
+        </li>
+        <li>
+            <p>
+                we cann't create abstract methods inside non-abstract class but an abstract can have non-abstract function.An abstract class can 
+                exists without any abstract function(an abstract class with only non-abstract function is possible).
+            </p>
+        </li>
+       <li>
+            <p>
+               An abstract class can never be <span class="kwd">static</span> or <span class="kwd">sealed</span>, if you try to use then it weill throw compile time error.
+            </p>
+        </li>
+    </ul>
+    
+</div>

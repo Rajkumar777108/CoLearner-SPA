@@ -1,0 +1,22 @@
+li {
+    list-style: none; /* Remove HTML bullets */
+    /* padding: 0;
+    margin: 0; */
+  }
+ li::before {
+    content: "|";
+    color:lightblue;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: 1em;
+  }
+  /* .cls{
+    content: "|";
+    color:red;
+  } */
+  /* table
+  {
+    border-top-style: none;
+    border-bottom-style: none;
+  } */
